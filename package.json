@@ -1,0 +1,22 @@
+{
+  "name": "japanese-crosswords",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxvst/japanese-crosswords.git"
+  },
+  "author": "Maksim Vostrukhin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxvst/japanese-crosswords/issues"
+  },
+  "homepage": "https://github.com/maxvst/japanese-crosswords#readme",
+  "devDependencies": {
+    "@angular/cli": "^8.3.21"
+  }
+}
