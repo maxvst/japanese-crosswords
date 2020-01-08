@@ -1,0 +1,5 @@
+<p>crossword works!</p>
+<button (click)="run()">iterate</button>
+<div class="field">
+    <app-row *ngFor="let row of field" [row]="row"></app-row>
+</div>
