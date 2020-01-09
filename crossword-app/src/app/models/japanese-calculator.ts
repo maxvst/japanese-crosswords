@@ -55,8 +55,6 @@ export class JapaneseCalculator {
             }
             res[x] = column;
         }
-        console.log ('res:');
-        console.log (res);
         return res;
     }
 
@@ -65,7 +63,6 @@ export class JapaneseCalculator {
         while (isUpdateFieldSuccess) {
             isUpdateFieldSuccess = false;
             for (const lineData of this.getAllConditionTemplatePairs()) {
-                console.log ('lineData: ', lineData);
                 const newUnraveledLine = this.calculateLine(lineData.condition, lineData.template);
                 const isUpdateLineSuccess: boolean = this.updateLine(newUnraveledLine, lineData.type, lineData.index);
                 if (isUpdateLineSuccess && this.iterationSize === IterationSize.Line) {
@@ -112,8 +109,6 @@ export class JapaneseCalculator {
         const assumedLine: AssumedCell[] = (new Array(lineLength)).fill(CommonCellStatus.Unknown);
         let assumedLines: AssumedCell[][] = [];
         const assumedLineOffset = 0;
-        console.log ('condition:', condition);
-        console.log ('template:', template);
         assumedLines = this.getAllPossibleLineCombinations(template, condition, assumedLine, assumedLineOffset);
         return this.matchAssumedLines(assumedLines);
     }
@@ -171,7 +166,6 @@ export class JapaneseCalculator {
     }
 
     private updateLine(newLine: UnraveledCell[], lineType: LineType, index: number): boolean {
-        console.log ('---------------------field0:------------------------------', this.field);
         if (lineType === LineType.Row) {
             if (this.field[index].every((cell, i) => cell === newLine[i])) {
                 return false;
@@ -198,8 +192,6 @@ export class JapaneseCalculator {
     }
 
     private matchAssumedLines(lines: AssumedCell[][]): UnraveledCell[] {
-        console.log ('matching lines:');
-        console.log (lines);
         const length = lines[0].length;
         const unraveledLine: UnraveledCell[] = [];
 
